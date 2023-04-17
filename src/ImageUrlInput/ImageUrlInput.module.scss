@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  ::-webkit-input-placeholder {
+    font-style: italic;
+  }
+  :-moz-placeholder {
+    font-style: italic;
+  }
+  ::-moz-placeholder {
+    font-style: italic;
+  }
+  :-ms-input-placeholder {
+    font-style: italic;
+  }
+}
+
+.imageInput {
+  width: 80%;
+  height: 30px;
+  border-radius: 3px;
+}
+
+.inputButton {
+  height: 30px;
+  border-radius: 3px;
+  // border: none;
+}
