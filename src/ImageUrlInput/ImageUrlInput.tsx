@@ -1,24 +1,33 @@
 import * as React from "react";
 import { imageContext } from "../context/ImageContext";
+import styles from "./ImageUrlInput.module.scss";
 
 const ImageUrlInput = () => {
   const context = React.useContext(imageContext);
-  const { dispatch } = context;
-  const [inputValue, setInputValue] = React.useState();
+  const { state, dispatch } = context;
+  const [inputValue, setInputValue] = React.useState<string>();
 
   const handleButtonClick = () => {
-    dispatch({
-      type: "SET_IMAGE",
-      image: inputValue
-    });
+    if (inputValue !== state.image) {
+      dispatch({
+        type: "SET_IMAGE",
+        image: inputValue,
+      });
+    }
   };
   return (
-    <div>
+    <div className={styles.wrapper}>
       <input
+        className={styles.imageInput}
         placeholder="Enter image url"
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <button onClick={() => handleButtonClick()}>Show that meme</button>
+      <button
+        className={styles.inputButton}
+        onClick={() => handleButtonClick()}
+      >
+        Show that meme
+      </button>
     </div>
   );
 };
