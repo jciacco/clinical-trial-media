@@ -4,7 +4,7 @@ type InitialStateType = {
   image: string;
 };
 const initialState = {
-  image: ""
+  image: "",
 };
 
 const imageContext = createContext<{
@@ -12,19 +12,18 @@ const imageContext = createContext<{
   dispatch: React.Dispatch<any>;
 }>({
   state: initialState,
-  dispatch: () => null
+  dispatch: () => null,
 });
 const { Provider } = imageContext;
 
 const ImageProvider = ({ children }: { children: any }) => {
   const [state, dispatch] = useReducer(
     (prevState: InitialStateType, action: any) => {
-      console.log("action: ", action);
       switch (action.type) {
         case "SET_IMAGE":
           return {
             ...prevState,
-            image: action.image
+            image: action.image,
           };
         default:
           throw new Error();

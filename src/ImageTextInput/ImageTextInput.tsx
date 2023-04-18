@@ -1,4 +1,5 @@
 import * as React from "react";
+import styles from "./ImageTextInput.module.scss";
 
 interface ImageTextInputProps {
   setImageText: React.Dispatch<React.SetStateAction<string>>;
