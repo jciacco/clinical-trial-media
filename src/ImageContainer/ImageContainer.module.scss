@@ -1,7 +1,9 @@
 .memeWrapper {
-  display: flex;
   padding: 10%;
   gap: 1%;
+  &.mirror {
+    display: flex;
+  }
 }
 
 .memeAndTextContainer {
@@ -14,7 +16,7 @@
 }
 
 .meme {
-  width: 70%;
+  width: 60%;
   &.widthWithMirror {
     width: 90%;
   }

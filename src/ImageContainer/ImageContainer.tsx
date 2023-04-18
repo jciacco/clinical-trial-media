@@ -38,6 +38,12 @@ const ImageContainer = () => {
     },
   ];
 
+  useEffect(() => {
+    if (state.image && mirrorImage) {
+      setMirrorImage(false);
+    }
+  }, [state.image]);
+
   return (
     <div
       style={{
@@ -50,7 +56,9 @@ const ImageContainer = () => {
     >
       {state.image && (
         <>
-          <div className={styles.memeWrapper}>
+          <div
+            className={`${styles.memeWrapper} ${mirrorImage && styles.mirror}`}
+          >
             <div
               className={styles.memeAndTextContainer}
               style={{ transform: `rotate(${rotationDegree}deg)` }}
